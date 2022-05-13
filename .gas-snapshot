@@ -1,0 +1,8 @@
+TestMint:testMint() (gas: 94816)
+TestMint:testOnlyMinterCanMint() (gas: 15232)
+TestOwner:testMinterNotEqualOld() (gas: 40459)
+TestOwner:testMinterNotZero() (gas: 13251)
+TestOwner:testOnlyOwnerCanSetMinter() (gas: 13319)
+TestOwner:testSetMinter() (gas: 41184)
+TestSoulbound:testCannotSafeTransferFrom() (gas: 14960)
+TestSoulbound:testCannotTransferFrom() (gas: 14906)
