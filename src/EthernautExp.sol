@@ -22,9 +22,6 @@ contract EthernautExp is IEthernautExp, ERC721, Ownable {
     uint256 public totalSupply;
 
     /// @notice
-    address public minter;
-
-    /// @notice
     IERC20 public exp;
 
     /*//////////////////////////////////////////////////////////////
