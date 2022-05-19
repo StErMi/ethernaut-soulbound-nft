@@ -3,13 +3,13 @@ pragma solidity ^0.8.13;
 
 import "forge-std/Test.sol";
 
-import "src/UserExp.sol";
+import "src/EthernautExp.sol";
 import "./MockExp.sol";
 import "./Utilities.sol";
 
 contract BaseTest is Test {
     MockExp exp;
-    UserExp userExp;
+    EthernautExp expNFT;
     Utilities utilities;
 
     address alice;
@@ -23,7 +23,7 @@ contract BaseTest is Test {
         bob = users[1];
 
         exp = new MockExp();
-        userExp = new UserExp(exp);
+        expNFT = new EthernautExp(exp);
 
         // mint 10 exp to Alice
         exp.mint(alice, 10);

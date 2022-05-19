@@ -19,37 +19,37 @@ contract TestMint is BaseTest {
         vm.startPrank(alice);
 
         // mint an NFT
-        userExp.mint();
+        expNFT.mint();
 
         // try to mint again and fail
-        vm.expectRevert(UserExp.Unique.selector);
-        userExp.mint();
+        vm.expectRevert(EthernautExp.Unique.selector);
+        expNFT.mint();
 
         vm.stopPrank();
     }
 
     /// @notice Mint successful
     function testMint() public {
-        uint256 totalSupplyBefore = userExp.totalSupply();
-        uint256 userBalanceBefore = userExp.balanceOf(alice);
+        uint256 totalSupplyBefore = expNFT.totalSupply();
+        uint256 userBalanceBefore = expNFT.balanceOf(alice);
         
         vm.prank(alice);
         vm.expectEmit(true, true, true, false);
         emit Transfer(address(0), alice, totalSupplyBefore);
-        uint256 tokenId = userExp.mint();
+        uint256 tokenId = expNFT.mint();
 
         assertEq(tokenId, totalSupplyBefore);
-        assertEq(userExp.ownerOf(tokenId), alice);
-        assertEq(userExp.balanceOf(alice), userBalanceBefore + 1);
-        assertEq(userExp.totalSupply(), totalSupplyBefore + 1);
+        assertEq(expNFT.ownerOf(tokenId), alice);
+        assertEq(expNFT.balanceOf(alice), userBalanceBefore + 1);
+        assertEq(expNFT.totalSupply(), totalSupplyBefore + 1);
     }
 
     /// @notice Mint successful
     function testTokenURI() public {
         vm.prank(alice);
-        uint256 tokenId = userExp.mint();
+        uint256 tokenId = expNFT.mint();
 
-        string memory tokenUri = userExp.tokenURI(tokenId);
+        string memory tokenUri = expNFT.tokenURI(tokenId);
         console.log('tokenUri ->', tokenUri);
     }
 

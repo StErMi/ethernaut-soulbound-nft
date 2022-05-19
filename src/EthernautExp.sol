@@ -7,11 +7,11 @@ import "@openzeppelin/contracts/utils/Base64.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-import "./interface/IUserExp.sol";
+import "./interface/IEthernautExp.sol";
 
 /// @title Exp nft contract
 /// @notice The NFT Token is soulbound
-contract UserExp is IUserExp, ERC721, Ownable { 
+contract EthernautExp is IEthernautExp, ERC721, Ownable { 
     using Strings for uint256;
 
     /*//////////////////////////////////////////////////////////////
@@ -44,7 +44,7 @@ contract UserExp is IUserExp, ERC721, Ownable {
                                  CONSTRUCTOR
     //////////////////////////////////////////////////////////////*/
 
-    constructor(IERC20 _exp) ERC721("UserExp", "UserExp") {
+    constructor(IERC20 _exp) ERC721("EthernautExp", "EthernautExp") {
         if( address(_exp) == address(0) ) {
             revert InvalidExp();
         }

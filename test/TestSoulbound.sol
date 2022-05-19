@@ -12,49 +12,49 @@ contract TestSoulbound is BaseTest {
         super.setUp();
 
         vm.prank(alice);
-        tokenId = userExp.mint();
+        tokenId = expNFT.mint();
     }
 
     /// @notice Token is Soulbound, cannot call approve
     function testCannotApprove() public {
-        vm.expectRevert(UserExp.Soulbound.selector);
-        userExp.approve(bob, tokenId);
+        vm.expectRevert(EthernautExp.Soulbound.selector);
+        expNFT.approve(bob, tokenId);
     }
 
     /// @notice Token is Soulbound, cannot call getApproved
     function testCannotGetApprove() public {
-        vm.expectRevert(UserExp.Soulbound.selector);
-        userExp.getApproved(tokenId);
+        vm.expectRevert(EthernautExp.Soulbound.selector);
+        expNFT.getApproved(tokenId);
     }
 
     /// @notice Token is Soulbound, cannot call setApprovalForAll
     function testCannotSetApprovalForAll() public {
-        vm.expectRevert(UserExp.Soulbound.selector);
-        userExp.setApprovalForAll(bob, true);
+        vm.expectRevert(EthernautExp.Soulbound.selector);
+        expNFT.setApprovalForAll(bob, true);
     }
 
     /// @notice Token is Soulbound, cannot call isApprovedForAll
     function testCannoIsApprovedForAll() public {
-        vm.expectRevert(UserExp.Soulbound.selector);
-        userExp.isApprovedForAll(alice, bob);
+        vm.expectRevert(EthernautExp.Soulbound.selector);
+        expNFT.isApprovedForAll(alice, bob);
     }
 
     /// @notice Token is Soulbound, cannot call transferFrom
     function testCannotTransferFrom() public {
-        vm.expectRevert(UserExp.Soulbound.selector);
-        userExp.transferFrom(alice, bob, tokenId);
+        vm.expectRevert(EthernautExp.Soulbound.selector);
+        expNFT.transferFrom(alice, bob, tokenId);
     }
 
     /// @notice Token is Soulbound, cannot call safeTransferFrom
     function testCannotSafeTransferFrom() public {
-        vm.expectRevert(UserExp.Soulbound.selector);
-        userExp.safeTransferFrom(alice, bob, tokenId);
+        vm.expectRevert(EthernautExp.Soulbound.selector);
+        expNFT.safeTransferFrom(alice, bob, tokenId);
     }
 
     /// @notice Token is Soulbound, cannot call safeTransferFrom
     function testCannotSafeTransferFromWithBytes() public {
-        vm.expectRevert(UserExp.Soulbound.selector);
-        userExp.safeTransferFrom(alice, bob, tokenId, "");
+        vm.expectRevert(EthernautExp.Soulbound.selector);
+        expNFT.safeTransferFrom(alice, bob, tokenId, "");
     }
 
 

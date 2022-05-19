@@ -2,9 +2,9 @@
 pragma solidity ^0.8.13;
 
 
-interface IUserExp {
+interface IEthernautExp {
 
-    /// @notice Mint a new UserExp NFT
+    /// @notice Mint a new EthernautExp NFT
     /// @return The token ID of the minted NFT
     function mint() external returns (uint256);
 }
